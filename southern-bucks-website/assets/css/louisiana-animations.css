@@ -132,7 +132,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 40%, rgba(245, 158, 11, 0.1) 50%, transparent 60%);
+  background: rgba(245, 158, 11, 0.05);
   animation: bayouMist 15s linear infinite;
   pointer-events: none;
 }
@@ -222,7 +222,7 @@
 
 /* Louisiana-themed section dividers */
 .section-title::after {
-  animation: flagWave 3s ease-in-out infinite;
+  /* Removed flagWave animation that used gradients */
 }
 
 /* Reduce animations on mobile and for accessibility */
