@@ -42,33 +42,12 @@
 <meta name="theme-color" content="#2E7D32">
 <meta name="msapplication-TileColor" content="#2E7D32">
     
-    <!-- Optimized Google Fonts Loading -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"></noscript>
-
-<!-- Critical CSS Inline -->
-<style>
-body{font-family:'Lato',sans-serif;background-color:#212529;color:#F8F9FA;margin:0;padding:0;line-height:1.6}
-.header{background-color:#2c3136;padding:1rem 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,0.3)}
-.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-.hero{background-color:#212529;padding:120px 0 60px;text-align:center}
-.hero h1{font-family:'Oswald',sans-serif;font-size:3.5rem;color:#F8F9FA;margin-bottom:1rem}
-.btn{display:inline-block;padding:12px 30px;background-color:#D95D39;color:#F8F9FA;text-decoration:none;border-radius:5px;font-weight:600;transition:all 0.3s ease}
-.btn:hover{background-color:#A9C25D;transform:translateY(-2px)}
-.nav{display:flex;justify-content:space-between;align-items:center}
-.logo{display:flex;align-items:center;gap:0.5rem}
-.logo h1{color:#A9C25D;margin:0;font-size:1.5rem}
-.nav-links{display:flex;list-style:none;gap:2rem;margin:0;padding:0}
-.nav-links a{color:#F8F9FA;text-decoration:none;font-weight:500;transition:color 0.3s ease}
-.nav-links a:hover{color:#A9C25D}
-</style>
-
-<!-- Deferred CSS Loading -->
-<link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/styles.css"></noscript>
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
     <!-- JSON-LD Structured Data for Local Business SEO -->
     <script type="application/ld+json">
     {
@@ -293,11 +272,6 @@ body{font-family:'Lato',sans-serif;background-color:#212529;color:#F8F9FA;margin
     </script>
 </head>
 <body>
-    <!-- Skip Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <header class="header">
-
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -337,15 +311,14 @@ body{font-family:'Lato',sans-serif;background-color:#212529;color:#F8F9FA;margin
     </nav>
 
     <!-- Hero Section -->
-    <main id="main-content">
-    <section class="hero">
-        <div class="hero-image-container">
-    <picture>
-        <source srcset="assets/images/landscaping_before_after_1.webp" type="image/webp">
-        <img src="assets/images/professional_mowing_1.jpg" alt="Professional lawn care service in Walker LA" class="hero-background" loading="eager">
-    </picture>
-    <div class="hero-overlay"></div>
-</div>
+    <section class="hero" id="home">
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="assets/videos/lawn-care-hero.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
             <div class="hero-content">
                 <div class="hero-logo">
                     <picture>
@@ -402,14 +375,28 @@ body{font-family:'Lato',sans-serif;background-color:#212529;color:#F8F9FA;margin
                     <h3 class="service-title">Weed Removal</h3>
                     <p class="service-description">Comprehensive weed control to maintain a clean, healthy lawn.</p>
                 </div>
-                                <div class="service-card">
+                <div class="service-card">
+                    <div class="service-icon gutter-icon">
+                        <img src="assets/icons/gutter_cleaning_icon.svg" alt="Gutter Cleaning">
+                    </div>
+                    <h3 class="service-title">Gutter Cleaning</h3>
+                    <p class="service-description">Professional gutter cleaning and maintenance services.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon design-icon">
+                        <img src="assets/icons/landscape_design_icon.svg" alt="Landscape Design">
+                    </div>
+                    <h3 class="service-title">Landscape Design & Planning</h3>
+                    <p class="service-description">3D software designing and comprehensive landscape planning.</p>
+                </div>
+                <div class="service-card">
                     <div class="service-icon hardscape-icon">
                         <img src="assets/icons/hardscape_icon.svg" alt="Hardscaping">
                     </div>
                     <h3 class="service-title">Hardscapes & Pavers</h3>
                     <p class="service-description">Beautiful hardscape installations including patios and walkways.</p>
                 </div>
-     <div class="service-card">
+                <div class="service-card">
                     <div class="service-icon fire-icon">
                         <img src="assets/icons/fire_pit_icon.svg" alt="Fire Pits">
                     </div>
@@ -559,7 +546,7 @@ body{font-family:'Lato',sans-serif;background-color:#212529;color:#F8F9FA;margin
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"Shane and his team transformed our overgrown yard into something beautiful. The attention to detail is incredible, and you can tell he truly cares about the work. Highly recommend!"</p>
                     <div class="testimonial-author">
-                        <p class="testimonial-name">Sarah Johnson</p>
+                        <h4>Sarah Johnson</h4>
                         <p>Walker, LA</p>
                     </div>
                 </div>
@@ -567,7 +554,7 @@ body{font-family:'Lato',sans-serif;background-color:#212529;color:#F8F9FA;margin
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"Professional, reliable, and reasonably priced. Shane treats our property like it's his own. We've been using Southern Buck Lawns for 6 months and couldn't be happier."</p>
                     <div class="testimonial-author">
-                        <p class="testimonial-name">Mike Thompson</p>
+                        <h4>Mike Rodriguez</h4>
                         <p>Denham Springs, LA</p>
                     </div>
                 </div>
@@ -575,15 +562,15 @@ body{font-family:'Lato',sans-serif;background-color:#212529;color:#F8F9FA;margin
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"The hardscape work they did in our backyard exceeded our expectations. Shane's experience really shows in the quality of work. We get compliments from neighbors all the time!"</p>
                     <div class="testimonial-author">
-                        <p class="testimonial-name">Lisa Davis</p>
+                        <h4>Jennifer Davis</h4>
                         <p>Port Vincent, LA</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        
-        <!-- Final CTA Section -->
+
+    <!-- Final CTA Section -->
     <section class="final-cta" id="quote">
         <div class="container">
             <div class="cta-content">
@@ -599,11 +586,7 @@ body{font-family:'Lato',sans-serif;background-color:#212529;color:#F8F9FA;margin
                 </div>
             </div>
         </div>
-</section>
-
-<!-- last section
-
-</main>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
