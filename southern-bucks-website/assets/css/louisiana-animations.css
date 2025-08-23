@@ -1,0 +1,249 @@
+/* Louisiana-themed animations and effects */
+
+/* Bayou Mist Animation */
+@keyframes bayouMist {
+  0% {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(100%) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Antler Growth Animation */
+@keyframes antlerGrow {
+  0% {
+    transform: scale(0) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.7) rotate(5deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Cypress Sway */
+@keyframes cypressSway {
+  0%, 100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+/* Louisiana Flag Wave */
+@keyframes flagWave {
+  0%, 100% {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 90%, 90% 85%, 100% 100%, 0 100%);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 95% 85%, 100% 90%, 95% 85%, 100% 100%, 0 100%);
+  }
+}
+
+/* Mower Trail Effect */
+@keyframes mowerTrail {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+/* Pelican Flight */
+@keyframes pelicanFly {
+  0% {
+    transform: translateX(-50px) translateY(10px) rotate(-5deg);
+  }
+  25% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(50px) translateY(-5px) rotate(2deg);
+  }
+  75% {
+    transform: translateX(100px) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(150px) translateY(5px) rotate(-2deg);
+  }
+}
+
+/* Jazz Note Float */
+@keyframes jazzFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-3deg);
+  }
+}
+
+/* Magnolia Bloom */
+@keyframes magnoliaBoom {
+  0% {
+    transform: scale(0.5) rotate(-15deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Crawfish Pinch */
+@keyframes crawfishPinch {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.9);
+  }
+}
+
+/* Apply animations to elements */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 40%, rgba(245, 158, 11, 0.1) 50%, transparent 60%);
+  animation: bayouMist 15s linear infinite;
+  pointer-events: none;
+}
+
+.service-icon {
+  animation: antlerGrow 0.8s ease-out 0.2s both;
+}
+
+.service-card:nth-child(odd) .service-icon {
+  animation-delay: 0.4s;
+}
+
+.service-card:nth-child(even) .service-icon {
+  animation-delay: 0.6s;
+}
+
+/* Add subtle sway to tall elements */
+.why-choose-image img {
+  animation: cypressSway 4s ease-in-out infinite;
+}
+
+/* Louisiana-themed hover effects */
+.btn:hover {
+  position: relative;
+}
+
+.btn-primary:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  background: var(--accent-gold);
+  animation: mowerTrail 0.6s ease-out;
+}
+
+/* Testimonial cards with jazz-inspired float */
+.testimonial-card {
+  animation: jazzFloat 6s ease-in-out infinite;
+}
+
+.testimonial-card:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.testimonial-card:nth-child(3) {
+  animation-delay: -4s;
+}
+
+/* Portfolio items with magnolia bloom effect */
+.portfolio-item {
+  animation: magnoliaBoom 0.6s ease-out both;
+}
+
+.portfolio-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.portfolio-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.portfolio-item:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.portfolio-item:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/* Feature icons with crawfish pinch */
+.feature-icon {
+  animation: crawfishPinch 2s ease-in-out infinite;
+}
+
+.feature:nth-child(2) .feature-icon {
+  animation-delay: 0.5s;
+}
+
+.feature:nth-child(3) .feature-icon {
+  animation-delay: 1s;
+}
+
+.feature:nth-child(4) .feature-icon {
+  animation-delay: 1.5s;
+}
+
+/* Louisiana-themed section dividers */
+.section-title::after {
+  animation: flagWave 3s ease-in-out infinite;
+}
+
+/* Reduce animations on mobile and for accessibility */
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .hero::after,
+  .service-icon,
+  .why-choose-image img,
+  .testimonial-card,
+  .portfolio-item,
+  .feature-icon,
+  .section-title::after {
+    animation: none !important;
+  }
+}
+
+/* Performance optimization - pause animations when not visible */
+@media (prefers-reduced-motion: no-preference) {
+  .hero:not(.visible) .hero::after,
+  .service-card:not(.visible) .service-icon,
+  .testimonial-card:not(.visible),
+  .portfolio-item:not(.visible) {
+    animation-play-state: paused;
+  }
+}
