@@ -869,7 +869,7 @@ section {
 }
 
 .footer-section h4 {
-    color: var(--color-primary);
+    color: #FFFFFF;
     margin-bottom: var(--spacing-md);
 }
 
@@ -896,7 +896,7 @@ section {
 }
 
 .footer-contact a {
-    color: var(--color-primary);
+    color: #FFFFFF;
 }
 
 .footer-cta {
